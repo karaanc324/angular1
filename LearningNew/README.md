@@ -38,5 +38,5 @@ React to user events
 
 Two way binding
     ( [(ngModel)]="data )
-
-lol
+ 
+lol its working
