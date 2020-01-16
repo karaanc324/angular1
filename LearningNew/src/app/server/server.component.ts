@@ -4,14 +4,29 @@ import { Component } from '@angular/core';
     // configuration   metadata for the class
     // selector should be specific, anyThing
     selector: 'app-server',
-    templateUrl: './server.component.html'
+    templateUrl: './server.component.html',
+    styles: [
+        `
+        .online {
+            color: white;
+        }
+        `
+    ]
 })
 export class ServerComponent {
 
     serverID = 10;
-    serverStatus = "offline";
+    serverStatus: string = "offline";
+
+    constructor() {
+        this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+    }
 
     getServerStatus() {
         return this.serverStatus
+    }
+
+    getColor() {
+        return this.serverStatus === 'online' ? 'green' : 'red';
     }
 }
