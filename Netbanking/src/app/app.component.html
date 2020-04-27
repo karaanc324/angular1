@@ -1,0 +1,24 @@
+<div class="container">
+  <p style="font-size: xx-large; text-align: center;">Welcome to Netbanking</p>
+  <div *ngIf="!signup">
+    <app-login (userEvent)="setUser($event)"></app-login>
+    <a routerLink="/signup" routerLinkActive="active" (click)="showSignupPage()">New user? Signup</a>
+  </div>
+  
+  <div *ngIf="signup">
+    <!-- <router-outlet></router-outlet> -->
+    <app-signup (user)="setUser($event)"></app-signup>
+    <a routerLink="/" routerLinkActive="active" (click)="showLoginPage()" >Existing User? Login</a>
+  </div>
+  <button class="btn btn-primary"
+        (click)="showUsers()"> {{userBtnStatus}}
+  </button>
+  <div class="row" *ngIf="userShow" style="text-align: center;">
+    <div  *ngFor="let user of users">
+      <p>{{user.name}}</p>
+      <p>{{user.password}}</p>
+    </div>
+  </div>
+</div>
+
+
