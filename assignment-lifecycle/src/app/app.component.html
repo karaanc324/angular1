@@ -1,0 +1,9 @@
+<div class="container">
+  <app-game-control (myEvent)="countReceived($event)"></app-game-control>
+  <div class="row" *ngIf="isEven; else odd">
+    <app-even [counter]="counter"></app-even>
+  </div>
+  <ng-template #odd>
+    <app-odd [counter]="counter"></app-odd>
+  </ng-template>
+</div>
