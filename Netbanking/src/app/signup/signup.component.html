@@ -1,14 +1,17 @@
 <div class="container">
-    <br>
-    <p style="font-size: x-large;">Signup</p>
-    <hr>
-    <label>UserName</label>
-    <input type="text" class="form-control" [(ngModel)]="userName">
-    <label>Password</label>
-    <input type="text" class="form-control" [(ngModel)]="password">
-    <label>Confirm Password</label>
-    <input type="text" class="form-control" [(ngModel)]="conPass">
-    <button class="btn btn-primary"
-        (click)="signup()"> SignUp
-    </button>
+    <div>
+        <br>
+        <p style="font-size: x-large;">Signup</p>
+        <hr>
+        <label>UserName</label>
+        <input type="text" class="form-control" [(ngModel)]="userName">
+        <label>Password</label>
+        <input type="text" class="form-control" [(ngModel)]="password">
+        <label>Confirm Password</label>
+        <input type="text" class="form-control" [(ngModel)]="conPass">
+        <button class="btn btn-primary" 
+            (click)="signup()" checkNull="userName"> SignUp 
+        </button>
+    </div>
+    
 </div>
