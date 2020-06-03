@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-signup',
@@ -7,22 +8,19 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  @Output() user = new EventEmitter<{name: string, password: string}>();
+  // @Output() user = new EventEmitter<{name: string, password: string}>();
 
-  userName=''
-  password=''
-  conPass=''
-  constructor() { console.log('signup component')}
+  userName;
+  password;
+  conPass;
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
   }
   signup() {
     if(this.password == this.conPass) {
       console.log("signup successful");
-      this.user.emit({
-      name : this.userName,
-      password : this.password
-    })
+      this.userService.setUser(this.userName, this.password)
     } else{
       alert('Passwords do not match')
     }

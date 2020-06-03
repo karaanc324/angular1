@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule, routingComp } from './app-routing.module'; 
 import { NullCheckDirective } from './directives/null.check.directive';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { NullCheckDirective } from './directives/null.check.directive';
     FormsModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

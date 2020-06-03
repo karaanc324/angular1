@@ -9,9 +9,11 @@
         <input type="text" class="form-control" [(ngModel)]="password">
         <label>Confirm Password</label>
         <input type="text" class="form-control" [(ngModel)]="conPass">
-        <button class="btn btn-primary" 
-            (click)="signup()" checkNull="userName"> SignUp 
+        <button class="btn btn-primary"
+            checkNull [userName]="userName" [password]="password" 
+            (click)="signup()" > SignUp 
         </button>
+        <p checkNull>lol</p>
     </div>
     
 </div>

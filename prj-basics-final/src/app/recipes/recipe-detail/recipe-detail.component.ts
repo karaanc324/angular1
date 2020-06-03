@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Recipe } from '../recipe.model';
+import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -9,7 +11,8 @@ import { Recipe } from '../recipe.model';
 export class RecipeDetailComponent implements OnInit {
 
   // @Input() incomingRecipe: Recipe
-  constructor() { }
+  // constructor(private shoppingListService: ShoppingListService) { }
+  constructor(private recipeService: RecipeService) {}
 
   @Input() recipe: Recipe
 
@@ -19,4 +22,11 @@ export class RecipeDetailComponent implements OnInit {
   // getRecipe(recipe: Recipe) {
   //   console.log('detail me: '+ recipe.name)
   // }
+
+  addToShoppingList() {
+    // this.recipe.ingridients.forEach(ingridient => {
+    //   this.shoppingListService.addIngridient(ingridient);
+    // })
+    this.recipeService.addToShoppingList(this.recipe.ingridients);
+  }
 }

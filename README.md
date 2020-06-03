@@ -41,4 +41,5 @@
 	- Angular 6+, application wide access of service in different way 
 		Instead of adding a service class to the providers[]  array in AppModule , you can set the following config in @Injectable() :
 		@Injectable({providedIn: 'root'})
-		
+	- Arrays in typescript are reference type in javascript, so just 
+		return arr.slice(), creates new array that is exact copy of the Arrays
